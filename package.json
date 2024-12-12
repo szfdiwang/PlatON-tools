@@ -1,20 +1,21 @@
 {
-  "name": "platon-tools",
+  "name": "@szfdiwang/platon-tools",
   "version": "0.0.1",
   "description": "PlatON utility library with built-in contract trading parameters",
   "main": "package/my-library.umd.js",
   "module": "package/my-library.es.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vite build"
+    "build": "tsc --noEmit && vite build"
   },
   "keywords": [
     "PlatON",
     "Web3",
     "utils"
   ],
+  "private": false,
   "author": "1726021@qq.com",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "tslib": "^2.8.1",
     "typescript": "^5.7.2",
