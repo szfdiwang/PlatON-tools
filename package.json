@@ -2,8 +2,8 @@
   "name": "@szfdiwang/platon-tools",
   "version": "0.0.2",
   "description": "PlatON utility library with built-in contract trading parameters",
-  "main": "package/my-library.umd.js",
-  "module": "package/my-library.es.js",
+  "main": "packages/my-library.umd.js",
+  "module": "packages/my-library.es.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc --noEmit && vite build"
@@ -18,13 +18,20 @@
     "name": "szfdiwang",
     "email": "1726021@qq.com"
   },
-  "types": "package/index.d.ts",
+  "types": "packages/index.d.ts",
   "license": "MIT",
   "dependencies": {
     "tslib": "^2.8.1",
     "typescript": "^5.7.2",
     "vite": "^6.0.3"
   },
+  "files": [
+    "packages",
+    "types",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
   "devDependencies": {
     "@ethereumjs/rlp": "^5.0.2",
     "@types/node": "^22.10.2"
