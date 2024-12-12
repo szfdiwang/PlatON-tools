@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "declaration": true, // 生成 .d.ts 声明文件
+        "declarationDir": "packages", // 声明文件输出目录
+        "outDir": "packages", // 编译文件输出目录
+        "sourceMap": true, // 生成 Source Map 文件
+        "lib": [
+            "DOM",
+            "ESNext"
+        ]
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules",
+        "packages"
+    ]
+}
