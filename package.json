@@ -1,6 +1,6 @@
 {
   "name": "@szfdiwang/platon-tools",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "PlatON utility library with built-in contract trading parameters",
   "main": "package/my-library.umd.js",
   "module": "package/my-library.es.js",
@@ -14,7 +14,11 @@
     "utils"
   ],
   "private": false,
-  "author": "1726021@qq.com",
+  "author": {
+    "name": "szfdiwang",
+    "email": "1726021@qq.com"
+  },
+  "types": "package/index.d.ts",
   "license": "MIT",
   "dependencies": {
     "tslib": "^2.8.1",
