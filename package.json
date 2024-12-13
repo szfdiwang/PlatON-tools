@@ -1,6 +1,6 @@
 {
   "name": "@szfdiwang/platon-tools",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "PlatON utility library with built-in contract trading parameters",
   "main": "packages/my-library.umd.js",
   "module": "packages/my-library.es.js",
