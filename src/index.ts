@@ -1,11 +1,5 @@
 import { RLP, utils } from "@ethereumjs/rlp";
-import {
-  ParamsForCode,
-  ParamsForTx,
-  CodeType,
-  GetDataParams,
-  MethodParams,
-} from "./types";
+import { ParamsForTx, CodeType } from "./types";
 /**
  * @param code number function type E.g. 1004 委托, 1005 解委托
  * @returns build-in contract address
@@ -30,7 +24,7 @@ const getContractAddress = (code: CodeType): string | undefined => {
   }
 };
 
-const _getData = <T extends CodeType>(params: GetDataParams<T>): string => {
+const _getData = (params: any[]): string => {
   const arr = [];
   for (const param of params) {
     arr.push("0x" + utils.bytesToHex(RLP.encode(param)));
@@ -53,11 +47,10 @@ const _getData = <T extends CodeType>(params: GetDataParams<T>): string => {
 const getParams = <T extends CodeType>(
   code: T,
   address: string,
-  params: ParamsForCode<T>
+  params: any[]
 ): ParamsForTx | undefined => {
   try {
-    if (!address || !params || params.length === 0)
-      throw new Error("Function params error");
+    if (!address || !params) throw new Error("Function params error");
     return {
       from: address,
       to: getContractAddress(code),
@@ -72,5 +65,7 @@ const Tools = {
   getContractAddress,
   getParams,
 };
+
+export { getContractAddress, getParams };
 
 export default Tools;

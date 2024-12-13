@@ -1,4 +1,4 @@
-// type CodeType =
+// 根据字段类型定义推导对应的参数类型
 
 const paramsOrder = {
   1000: [
@@ -64,22 +64,14 @@ const paramsOrder = {
   5000: [],
   5100: ["address", "nodeIDs"],
 } as const;
+
 type ParamsOrder = typeof paramsOrder;
 type CodeType = keyof ParamsOrder; // 提取所有的键，类型为 '1000' | '1001' | ... | '5100'
-type ParamsForCode<T extends CodeType> = ParamsOrder[T]; // 根据键获取对应的参数数组
-type MethodParams<T extends CodeType> = [
-  code: T, // 方法名，类型为 paramsOrder 的键
-  params: Record<ParamsForCode<T>[number], any> // 参数为键值对，根据键动态推导值类型
-];
 
 type ParamsForTx = {
   from: string;
   to: string | undefined;
   data: string;
 };
-type GetDataParams<T extends CodeType> = [
-  T,
-  ...{ [K in keyof ParamsForCode<T>]: any }
-];
 
-export { CodeType, GetDataParams, ParamsForCode, MethodParams, ParamsForTx };
+export { CodeType, ParamsForTx };
